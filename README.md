@@ -1,52 +1,61 @@
-# 🔢 Fibonacci Activity
-## PROG7312 ICE Task
+# 🔢 Fibonacci Finder – Recursive vs Iterative Challenge  
+## C# GUI Application
 
 ---
 
 ## 🧠 Overview
 
-In this activity, you'll explore the magical world of **recursion** by implementing a function to solve the classic **Fibonacci sequence** problem.
+In this challenge, you'll build a **C# application** that explores the power (and limits) of **recursion** and **iteration** by computing values from the famous **Fibonacci sequence**.
 
-The Fibonacci sequence is a famous number series in which:
-- The first two numbers are `0` and `1`
-- Every number after that is the **sum of the two preceding ones**
+The Fibonacci sequence is a series where:
+- `F(0) = 0`, `F(1) = 1`
+- Every next number is the sum of the previous two:  
+  `F(n) = F(n-1) + F(n-2)`
 
 > Example:  
 > `0, 1, 1, 2, 3, 5, 8, 13, 21...`
-
-Your task is to **use recursion** (no loops!) to calculate the **nth Fibonacci number** and unlock the ancient gates of the legendary city of **Codeonia**. 🔓✨
 
 ---
 
 ## 🎯 Learning Objectives
 
-By completing this activity, you will:
-- Understand and implement **recursive functions**
-- Learn how **base cases** and **recursive cases** work
-- Apply recursion to solve a classic algorithmic problem
-- Recognize recursion’s **limitations and efficiency issues**
+By completing this project, you will:
+- Understand **recursive and iterative function design**
+- Build a **user interface (UI)** using C# (WinForms or WPF)
+- Compare the **performance** of recursion vs iteration
+- Gain insight into **algorithm efficiency** and runtime
 
 ---
 
-## 🛠️ Task Instructions
+## 🛠️ Your Task
 
-### 1. Write a Recursive Function
-
-Create a C# method that takes an integer `n` and returns the `n`th number in the Fibonacci sequence.
-
-### 🔁 Rules:
-- Use recursion (no loops)
-- The sequence must start with:
-  - `Fibonacci(0) = 0`
-  - `Fibonacci(1) = 1`
-- For all other values:
-  - `Fibonacci(n) = Fibonacci(n - 1) + Fibonacci(n - 2)`
+Create a C# GUI application that allows a user to:
+1. Enter a number `n`
+2. Generate and display the **Fibonacci sequence up to the nth number**
+3. Choose between:
+   - 🔁 Recursive method
+   - 🔄 Iterative method
+4. (Optional) Display the **time taken** by each method to compute the sequence
 
 ---
 
-## 💻 Sample Output
+## 🖼️ Suggested UI Design
+
+| Element         | Description                                  |
+|-----------------|----------------------------------------------|
+| TextBox         | For user to input `n`                        |
+| Radio Buttons   | Choose between Recursion or Iteration        |
+| Button          | `Generate Fibonacci Sequence`                |
+| ListBox/TextBox | Display the resulting Fibonacci sequence     |
+| Labels (optional) | Show time taken for each method            |
+
+---
+
+## 💻 Sample Recursive Method
 
 ```csharp
-Console.WriteLine(Fibonacci(5));  // Output: 5
-Console.WriteLine(Fibonacci(7));  // Output: 13
-Console.WriteLine(Fibonacci(10)); // Output: 55
+int FibonacciRecursive(int n)
+{
+    if (n <= 1) return n;
+    return FibonacciRecursive(n - 1) + FibonacciRecursive(n - 2);
+}
